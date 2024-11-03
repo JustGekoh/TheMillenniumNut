@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tp",
-  "eventList":[],
+  "%Name":"obj_nut",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_tp",
+  "name":"obj_nut",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment",
-    "path":"folders/Objects/Environment.yy",
+    "name":"Collectibles",
+    "path":"folders/Objects/Collectibles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_cashew_nut",
+    "path":"sprites/spr_cashew_nut/spr_cashew_nut.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
