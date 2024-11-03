@@ -40,7 +40,7 @@ get_controls();
 	if(place_meeting(x,y+yspd, obj_wall)){
 		wall_jump_counter = 3;
 		yspd = 0;
-		if(global.cashew_collected) {
+		if(global.cashew_collected && !place_meeting(x,y-5,obj_wall)) {
 			double_jump = true;
 		}
 	}
