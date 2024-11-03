@@ -1,7 +1,5 @@
 //Key Input
-right_key = keyboard_check(vk_right);
-left_key = keyboard_check(vk_left);
-jump_key = keyboard_check_pressed(vk_space);
+get_controls();
 
 
 //X Movement
@@ -17,11 +15,24 @@ jump_key = keyboard_check_pressed(vk_space);
 	//Gravity
 	yspd += grav;
 	//Jumping
-	if(jump_key && place_meeting(x,y+1, obj_wall)){
+	if(jump_buffer && place_meeting(x,y+1, obj_wall)){
+		jump_btimer = 0;
+		jump_buffer = 0;
 		yspd = jspd;
 	}
+	
+	//Wall Jumping
+	if(jump_buffer && wall_jump_counter > 0 &&place_meeting(x,y+1, obj_wall) == false && place_meeting(x+(move_dir*move_spd),y,obj_wall)){
+		jump_btimer = 0;
+		jump_buffer = 0;
+		wall_jump_counter--;
+		yspd = jspd;
+		xspd = -(move_dir*20);
+	}
+	
 	//Y Collision
 	if(place_meeting(x,y+yspd, obj_wall)){
+		wall_jump_counter = 3;
 		yspd = 0;
 	}
 	//Terminal Velocity
