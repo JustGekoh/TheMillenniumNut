@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tp",
+  "%Name":"nut",
   "eventList":[],
   "managed":true,
-  "name":"obj_tp",
+  "name":"nut",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment",
-    "path":"folders/Objects/Environment.yy",
+    "name":"Collectibles",
+    "path":"folders/Objects/Collectibles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_cashew_nut",
+    "path":"sprites/spr_cashew_nut/spr_cashew_nut.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
