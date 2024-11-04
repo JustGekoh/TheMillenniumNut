@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_global_vars_setup",
+  "%Name":"scr_game_setup",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_global_vars_setup",
+  "name":"scr_game_setup",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

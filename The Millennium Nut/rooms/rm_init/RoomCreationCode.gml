@@ -1,1 +1,1 @@
-room_goto(rm_hub);
+room_goto(asset_get_index(global.rm_saved));

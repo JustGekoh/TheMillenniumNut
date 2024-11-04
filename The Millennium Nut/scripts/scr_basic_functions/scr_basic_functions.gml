@@ -29,3 +29,18 @@ function get_controls(){
 			jump_buffer = 0;
 		}
 }
+
+
+function save_game(_rm_current) {
+	ini_open(global.save_file);
+
+	ini_write_real("nuts", "cashew", global.cashew_collected);
+	ini_write_real("nuts", "almond", global.almond_collected);
+	ini_write_real("nuts", "chestnut", global.chestnut_collected);
+	ini_write_real("nuts", "peanut", global.peanut_collected);
+	ini_write_real("nuts", "millenniumnut", global.millennium_nut_collected);
+
+	ini_write_string("player", "room", _rm_current);
+
+	ini_close();
+}
