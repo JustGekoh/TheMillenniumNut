@@ -19,6 +19,9 @@ get_controls();
 		jump_btimer = 0;
 		jump_buffer = 0;
 		yspd = jspd;
+		if(global.cashew_collected) {
+			double_jump = true;	
+		}
 	}
 	
 	//Wall Jumping
@@ -40,9 +43,6 @@ get_controls();
 	if(place_meeting(x,y+yspd, obj_wall)){
 		wall_jump_counter = 3;
 		yspd = 0;
-		if(global.cashew_collected && !place_meeting(x,y-5,obj_wall)) {
-			double_jump = true;
-		}
 	}
 	//Terminal Velocity
 	if(yspd > terminal_velocity){
