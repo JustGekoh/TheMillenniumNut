@@ -10,7 +10,7 @@ get_controls();
 	}
 	xspd = move_dir * move_spd;
 	//X Collision
-	if(place_meeting(x + xspd,y,obj_wall)){
+	if(place_meeting(x + xspd,y,collision_objs)){
 		xspd = 0;
 	}
 
@@ -18,7 +18,7 @@ get_controls();
 	//Gravity
 	yspd += grav;
 	//Jumping
-	if(jump_buffer && place_meeting(x,y+1, obj_wall)){
+	if(jump_buffer && place_meeting(x,y+1, collision_objs)){
 		jump_btimer = 0;
 		jump_buffer = 0;
 		yspd = jspd;
@@ -28,7 +28,7 @@ get_controls();
 	}
 	
 	//Wall Jumping
-	if(jump_buffer && wall_jump_counter > 0 && place_meeting(x,y+1, obj_wall) == false && (place_meeting(x-5,y,obj_wall) || place_meeting(x+5,y,obj_wall))){
+	if(jump_buffer && wall_jump_counter > 0 && place_meeting(x,y+1, collision_objs) == false && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
 		jump_btimer = 0;
 		jump_buffer = 0;
 		wall_jump_counter--;
@@ -37,13 +37,13 @@ get_controls();
 	}
 	
 	//Double jumping
-	if(jump_buffer && double_jump && !place_meeting(x, y+1, obj_wall) && !place_meeting(x+(move_dir*move_spd),y,obj_wall)) {
+	if(jump_buffer && double_jump && !place_meeting(x, y+1, collision_objs) && !place_meeting(x+(move_dir*move_spd),y,collision_objs)) {
 		double_jump = false;
 		yspd = jspd;
 	}
 	
 	//Y Collision
-	if(place_meeting(x,y+yspd, obj_wall)){
+	if(place_meeting(x,y+yspd, collision_objs)){
 		wall_jump_counter = 3;
 		yspd = 0;
 	}
