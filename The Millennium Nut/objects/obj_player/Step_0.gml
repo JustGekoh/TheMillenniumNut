@@ -28,7 +28,7 @@ get_controls();
 	}
 	
 	//Wall Jumping
-	if(jump_buffer && wall_jump_counter > 0 && place_meeting(x,y+1, collision_objs) == false && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
+	if(jump_buffer && global.peanut_collected && wall_jump_counter > 0 && place_meeting(x,y+1, collision_objs) == false && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
 		jump_btimer = 0;
 		jump_buffer = 0;
 		wall_jump_counter--;

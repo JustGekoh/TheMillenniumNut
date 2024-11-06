@@ -4,7 +4,7 @@
 if (place_meeting(x, y, obj_player) && !global.cashew_collected) {
 	global.cashew_collected = true;
 
-	save_game(room_get_name(rm_nut));
+	save_game(room_get_name(room));
 	
 	instance_destroy()
 }
