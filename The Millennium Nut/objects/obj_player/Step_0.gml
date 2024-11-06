@@ -53,8 +53,10 @@ get_controls();
 		yspd = terminal_velocity;
 	}
 	
-	if (almond_key && global.almond_collected) {
+	if (almond_key && !almond_cd && global.almond_collected) {
 		instance_create_layer(x+32, y+32, "Instances", obj_almond_proj);
+		almond_cd = true;
+		alarm_set(0, 60);
 	}
 
 //Move
