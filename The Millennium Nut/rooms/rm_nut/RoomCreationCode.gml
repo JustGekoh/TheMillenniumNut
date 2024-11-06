@@ -1,1 +1,1 @@
-save_game(room_get_name(room));
+save_game();
