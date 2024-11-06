@@ -31,6 +31,8 @@
     {"$GMObjectProperty":"v1","%Name":"rm_next","filters":[
         "GMRoom",
       ],"listItems":[],"multiselect":false,"name":"rm_next","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_nut","path":"rooms/rm_nut/rm_nut.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_nut","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"x_overwrite","filters":[],"listItems":[],"multiselect":false,"name":"x_overwrite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"y_overwrite","filters":[],"listItems":[],"multiselect":false,"name":"y_overwrite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
