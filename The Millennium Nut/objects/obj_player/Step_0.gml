@@ -53,7 +53,7 @@ get_controls();
 		yspd = terminal_velocity;
 	}
 	
-	if (almond_key) {
+	if (almond_key && global.almond_collected) {
 		instance_create_layer(x+32, y+32, "Instances", obj_almond_proj);
 	}
 
