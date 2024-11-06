@@ -30,7 +30,7 @@ if(accept_key){
 		case 0:
 			switch(menu_pos){
 				case 0: //New Game
-					delete_save(); room_goto(rm_init); break;
+					delete_save(); load_game(); room_goto(rm_init); break;
 				case 1: //Continue
 					load_game(); room_goto(rm_init); break;
 				case 2: //Settings
