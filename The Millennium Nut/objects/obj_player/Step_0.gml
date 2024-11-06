@@ -17,15 +17,6 @@ get_controls();
 //Y Movement
 	//Gravity
 	yspd += grav;
-	//Jumping
-	if(jump_buffer && place_meeting(x,y+1, collision_objs)){
-		jump_btimer = 0;
-		jump_buffer = 0;
-		yspd = jspd;
-		if(global.cashew_collected) {
-			double_jump = true;	
-		}
-	}
 	
 	//Wall Jumping
 	if(jump_buffer && global.peanut_collected && wall_jump_counter > 0 && place_meeting(x,y+1, collision_objs) == false && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
@@ -46,6 +37,15 @@ get_controls();
 	if(place_meeting(x,y+yspd, collision_objs)){
 		wall_jump_counter = 3;
 		yspd = 0;
+		if(global.cashew_collected) {
+			double_jump = true;	
+		}
+		//Jumping
+		if(jump_buffer){
+			jump_btimer = 0;
+			jump_buffer = 0;
+			yspd = jspd;
+		}
 	}
 	
 	//Terminal Velocity
