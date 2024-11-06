@@ -5,6 +5,9 @@ get_controls();
 //X Movement
 	//Direction and X speed
 	move_dir = right_key - left_key;
+	if (move_dir != 0) {
+		prev_move_dir = move_dir
+	}
 	xspd = move_dir * move_spd;
 	//X Collision
 	if(place_meeting(x + xspd,y,obj_wall)){
@@ -44,13 +47,15 @@ get_controls();
 		wall_jump_counter = 3;
 		yspd = 0;
 	}
+	
 	//Terminal Velocity
 	if(yspd > terminal_velocity){
 		yspd = terminal_velocity;
 	}
-if (move_dir != 0) {
-	prev_move_dir = move_dir
-}
+	
+	if (almond_key) {
+		instance_create_layer(x+32, y+32, "Instances", obj_almond_proj);
+	}
 
 //Move
 x += xspd;

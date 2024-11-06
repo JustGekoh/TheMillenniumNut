@@ -3,7 +3,6 @@ function control_setup(){
 	wall_jump_counter = 3;
 	jump_buffer = 0;
 	jump_btimer = 0;
-	
 }
 
 
@@ -28,6 +27,10 @@ function get_controls(){
 		}else{
 			jump_buffer = 0;
 		}
+		
+		//Almond input
+		almond_key = keyboard_check_pressed(ord("E")) + gamepad_button_check_pressed(0, gp_face3);
+		almond_key = clamp(almond_key, 0, 1);
 }
 
 
