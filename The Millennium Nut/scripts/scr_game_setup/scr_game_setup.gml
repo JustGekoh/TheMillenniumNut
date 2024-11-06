@@ -1,8 +1,22 @@
-/// @description Script for defining global variables at game start
-
+//savefile
 global.save_file = "save.ini";
 
-if(true) {
+//Declaring save variables
+global.cashew_collected = false;
+global.almond_collected = false;
+global.chestnut_collected = false;
+global.peanut_collected = false;
+global.millennium_nut_collected = false;
+	
+global.player_x_save = 128;
+global.player_y_save = 640;
+	
+global.save_exists = false;
+
+global.rm_saved = "rm_hub";
+
+//Load game
+function load_game() {
 
 	ini_open(global.save_file);
 
@@ -22,17 +36,4 @@ if(true) {
 ini_close();
 
 }
-else {
-	global.cashew_collected = false;
-	global.almond_collected = false;
-	global.chestnut_collected = false;
-	global.peanut_collected = false;
-	global.millennium_nut_collected = false;
-	
-	global.player_x_save = 128;
-	global.player_y_save = 640;
-	
-	global.save_exists = false;
 
-	global.rm_saved = "rm_hub";
-}

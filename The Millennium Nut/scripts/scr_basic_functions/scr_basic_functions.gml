@@ -31,6 +31,13 @@ function get_controls(){
 		//Almond input
 		almond_key = keyboard_check_pressed(ord("E")) + gamepad_button_check_pressed(0, gp_face3);
 		almond_key = clamp(almond_key, 0, 1);
+		
+		//Opening menu
+		menu_key = keyboard_check_pressed(vk_escape) + gamepad_button_check_pressed(0, gp_start);
+		menu_key = clamp(menu_key, 0,1);
+		if(menu_key){
+			room_goto(rm_menu);
+		}
 }
 
 
@@ -51,4 +58,10 @@ function save_game() {
 	ini_write_string("player", "room", room_get_name(room));
 
 	ini_close();
+}
+
+function delete_save(){
+	if(file_exists(global.save_file)){
+		file_delete(global.save_file);
+	}
 }
