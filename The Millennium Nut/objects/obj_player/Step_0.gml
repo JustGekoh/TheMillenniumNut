@@ -17,18 +17,9 @@ get_controls();
 //Y Movement
 	//Gravity
 	yspd += grav;
-	//Jumping
-	if(jump_buffer && place_meeting(x,y+1, collision_objs)){
-		jump_btimer = 0;
-		jump_buffer = 0;
-		yspd = jspd;
-		if(global.cashew_collected) {
-			double_jump = true;	
-		}
-	}
 	
 	//Wall Jumping
-	if(jump_buffer && global.peanut_collected && wall_jump_counter > 0 && place_meeting(x,y+1, collision_objs) == false && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
+	if(jump_buffer && global.peanut_collected && wall_jump_counter > 0 && !place_meeting(x,y+yspd, collision_objs) && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
 		jump_btimer = 0;
 		jump_buffer = 0;
 		wall_jump_counter--;
@@ -37,7 +28,7 @@ get_controls();
 	}
 	
 	//Double jumping
-	if(jump_buffer && double_jump && !place_meeting(x, y+1, collision_objs) && !place_meeting(x+(move_dir*move_spd),y,collision_objs)) {
+	if(jump_buffer && double_jump && !place_meeting(x, y+1, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
 		double_jump = false;
 		yspd = jspd;
 	}
@@ -46,6 +37,15 @@ get_controls();
 	if(place_meeting(x,y+yspd, collision_objs)){
 		wall_jump_counter = 3;
 		yspd = 0;
+		if(global.cashew_collected) {
+			double_jump = true;	
+		}
+		//Jumping
+		if(jump_buffer){
+			jump_btimer = 0;
+			jump_buffer = 0;
+			yspd = jspd;
+		}
 	}
 	
 	//Terminal Velocity
@@ -53,8 +53,10 @@ get_controls();
 		yspd = terminal_velocity;
 	}
 	
-	if (almond_key && global.almond_collected) {
+	if (almond_key && !almond_cd && global.almond_collected) {
 		instance_create_layer(x+32, y+32, "Instances", obj_almond_proj);
+		almond_cd = true;
+		alarm_set(0, 60);
 	}
 
 //Move

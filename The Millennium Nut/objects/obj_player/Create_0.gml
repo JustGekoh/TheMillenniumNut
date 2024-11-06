@@ -20,3 +20,6 @@ if(global.cashew_collected) {
 
 //Collision
 collision_objs = [obj_wall, obj_wall_break];
+
+//Shooting
+almond_cd = false;
