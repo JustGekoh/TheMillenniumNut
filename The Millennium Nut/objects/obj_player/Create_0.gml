@@ -1,5 +1,6 @@
 //Setup
 control_setup();
+environment_variables();
 
 //Moving
 move_dir = 0;
@@ -9,8 +10,6 @@ xspd = 0;
 yspd = 0;
 
 //Vertical Movement
-grav = 0.25;
-terminal_velocity = 9;
 jspd = -7;
 
 double_jump = false;
@@ -18,8 +17,9 @@ if(global.cashew_collected) {
 	double_jump = true;
 }
 
-//Collision
-collision_objs = [obj_wall, obj_wall_break];
-
 //Shooting
 almond_cd = false;
+
+//Chestnut
+dashing = false;
+chestnut_id = 0;

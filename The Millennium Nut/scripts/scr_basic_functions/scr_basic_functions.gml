@@ -5,6 +5,17 @@ function control_setup(){
 	jump_btimer = 0;
 }
 
+function environment_variables(){
+	//Y Movement
+	grav = 0.25;	
+	terminal_velocity = 9;
+	
+	//X Movement
+	dash_spd = 8;
+	
+	//Collision
+	collision_objs = [obj_wall, obj_wall_break, obj_chestnut_dash];
+}
 
 function get_controls(){
 		//Movement Inputs
@@ -31,6 +42,10 @@ function get_controls(){
 		//Almond input
 		almond_key = keyboard_check_pressed(ord("E")) + gamepad_button_check_pressed(0, gp_face3);
 		almond_key = clamp(almond_key, 0, 1);
+		
+		//Chestnut input
+		chestnut_key = keyboard_check_pressed(ord("R")) + gamepad_button_check_pressed(0, gp_face2);
+		chestnut_key = clamp(chestnut_key, 0, 1);
 		
 		//Opening menu
 		menu_key = keyboard_check_pressed(vk_escape) + gamepad_button_check_pressed(0, gp_start);
