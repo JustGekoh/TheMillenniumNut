@@ -68,6 +68,8 @@ if(accept_key){
 					break;
 			}
 			break;
+			
+			
 	}
 		
 	//set position back

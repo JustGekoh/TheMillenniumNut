@@ -26,6 +26,8 @@ option[0,3] = "Exit";
 	option[2, 0] = "Fullscreen";
 	option[2, 1] = "Windowed";
 	option[2, 2] = "Back";
+	
+	
 
 op_length = 0;
 
