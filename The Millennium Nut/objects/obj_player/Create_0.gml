@@ -27,5 +27,7 @@ chestnut_id = 0;
 //Player health
 player_health = 3
 
-hostile_obj = [obj_spike]
+invincible = false;
+
+hostile_obj = [obj_spike, obj_enemy_bee]
 stunned = false;

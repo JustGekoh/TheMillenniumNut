@@ -46,7 +46,9 @@ get_controls();
 
 //Y Movement
 	//Gravity
-	yspd += grav;
+	if(!stunned){
+		yspd += grav;
+	}
 	
 	//Y Collision
 	if(!stunned && place_meeting(x,y+yspd, collision_objs)){
@@ -117,25 +119,33 @@ get_controls();
 	}
 
 //Enemy/Hostile environment collision
-	if(place_meeting(x, y, hostile_obj)) {
+	if(place_meeting(x, y, hostile_obj) && !invincible) {
 		player_health -= 1;
-		var _obj_other = instance_place(x, y, hostile_obj);
-		if(x < _obj_other.x) {
-			xspd = -5;
+		
+		if(player_health <= 0) {
+			game_restart();
 		}
 		else {
-			xspd = 5;
-		}
+			var _obj_other = instance_place(x, y, hostile_obj);
+			if(x < _obj_other.x) {
+				xspd = -5;
+			}
+			else {
+				xspd = 5;
+			}
 		
-		if(y < _obj_other.y) {
-			yspd = -5;
-		}
-		else {
-			yspd = 5;	
-		}
+			if(y < _obj_other.y) {
+				yspd = -5;
+			}
+			else {
+				yspd = 5;	
+			}
 		
-		alarm_set(5, 30);
-		stunned = true;
+			alarm_set(5, 10);
+			alarm_set(6, 40);
+			stunned = true;
+			invincible = true;
+		}
 	}
 
 //Move
