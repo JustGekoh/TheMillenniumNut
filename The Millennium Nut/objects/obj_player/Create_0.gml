@@ -23,3 +23,9 @@ almond_cd = false;
 //Chestnut
 dashing = false;
 chestnut_id = 0;
+
+//Player health
+player_health = 3
+
+hostile_obj = [obj_spike]
+stunned = false;
