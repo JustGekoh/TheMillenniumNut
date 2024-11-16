@@ -72,5 +72,16 @@
 		speed = 0;
 		path_speed = 0;
 	}
+	
+	if(place_meeting(x, y, obj_almond_proj)) {
+		bee_health -= 1;
+		with(instance_place(x, y, obj_almond_proj)) {
+			instance_destroy();
+		}
+	}
+
+if (bee_health <= 0) {
+	instance_destroy();
+}
 
 prev_idle = idle;
