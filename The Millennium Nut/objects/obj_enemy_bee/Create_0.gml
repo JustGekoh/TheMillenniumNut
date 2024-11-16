@@ -1,11 +1,14 @@
 //Check if path coordinate array has an equal amount of defined x and y coordinates.
 //Throw an error if not
-var _array = [];
-_array = x_path_coords
-_array = y_path_coords
+var _temp = [];
+_temp = x_path_coords
+_temp = y_path_coords
+_temp = 0;
+_temp = attack_cd;
 
 //General variables
 	collision_objs = [obj_wall, obj_wall_break];
+	stunned = false;
 
 //Path variables
 	idle = true;
