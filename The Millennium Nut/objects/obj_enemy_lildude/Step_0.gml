@@ -1,5 +1,5 @@
 switch(state) {
-	case IDLE:
+	case IDLE_LILDUDE:
 	speed = 4;
 	if(place_meeting(x - speed, y, collision_objs) || place_meeting(x + speed, y, collision_objs) || 
 	   !place_meeting(x + 48, y + 48, collision_objs) || !place_meeting(x - 48, y + 48, collision_objs)){
@@ -24,11 +24,11 @@ switch(state) {
 	}
 	
 	if(place_meeting(x, y, obj_player)) {
-		state = STUNNED;
+		state = STUNNED_LILDUDE;
 		alarm_set(0, 40);
 	}
 	if(place_meeting(x, y, obj_almond_proj)) {
-		state = STUNNED;
+		state = STUNNED_LILDUDE;
 		alarm_set(0, 40);
 		lildude_health -= 1;
 		with (instance_place(x, y, obj_almond_proj)) {

@@ -1,2 +1,2 @@
 /// @description Stun cd
-state = IDLE;
+state = IDLE_LILDUDE;

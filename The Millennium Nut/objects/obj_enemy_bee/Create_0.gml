@@ -1,3 +1,8 @@
+//State macros
+	#macro IDLE_BEE 0
+	#macro AGGRO_BEE 1
+	#macro STUNNED_BEE 2
+
 //Check if path coordinate array has an equal amount of defined x and y coordinates.
 //Throw an error if not
 var _temp = [];
@@ -8,7 +13,7 @@ _temp = attack_cd;
 
 //General variables
 	collision_objs = [obj_wall, obj_wall_break];
-	stunned = false;
+	state = IDLE_BEE;
 
 //Path variables
 	idle = true;
