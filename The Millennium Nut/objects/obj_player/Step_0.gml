@@ -3,11 +3,11 @@ get_controls();
 
 //X Movement
 	//Direction and X speed
-	if(!dashing){
+	if(!stunned && !dashing){
 		move_dir = right_key - left_key;
 		move_spd = 5;
 	}
-	else if(dashing) {
+	else if(!stunned && dashing) {
 		move_dir = right_key - left_key;
 		if((move_dir == prev_move_dir) || move_dir == 0) {
 			move_spd = dash_spd;
@@ -20,7 +20,7 @@ get_controls();
 	}
 	
 	//Dashing chestnut
-	if(chestnut_key && global.chestnut_collected && (move_dir != 0) && !dashing) {
+	if(!stunned && chestnut_key && global.chestnut_collected && (move_dir != 0) && !dashing) {
 		//Check if there is enough space to summon chestnut
 		if(dashing || (!dashing && (!place_meeting(x, y-64, collision_objs) || !place_meeting(x, y+64, collision_objs)))){
 			dashing = true;
@@ -36,8 +36,9 @@ get_controls();
 	if (move_dir != 0) {
 		prev_move_dir = move_dir
 	}
-	
-	xspd = move_dir * move_spd;
+	if(!stunned){
+		xspd = move_dir * move_spd;
+	}
 	//X Collision
 	if(place_meeting(x + xspd,y,collision_objs)){
 		xspd = 0;
@@ -45,10 +46,12 @@ get_controls();
 
 //Y Movement
 	//Gravity
-	yspd += grav;
+	if(!stunned){
+		yspd += grav;
+	}
 	
 	//Y Collision
-	if(place_meeting(x,y+yspd, collision_objs)){
+	if(!stunned && place_meeting(x,y+yspd, collision_objs)){
 		
 		if(!place_meeting(x, y+yspd, obj_chestnut_dash) && (yspd > 0)){
 			dashing = false;	
@@ -72,7 +75,7 @@ get_controls();
 		}
 	}
 	//Wall Jumping
-	else if(jump_buffer && global.peanut_collected && wall_jump_counter > 0 && !place_meeting(x,y+yspd, collision_objs) && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
+	else if(!stunned && jump_buffer && global.peanut_collected && wall_jump_counter > 0 && !place_meeting(x,y+yspd, collision_objs) && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
 		jump_btimer = 0;
 		jump_buffer = 0;
 		wall_jump_counter--;
@@ -80,7 +83,7 @@ get_controls();
 		xspd = -(prev_move_dir*20);
 	}
 	//Double jumping
-	else if(jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
+	else if(!stunned && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
 		if(place_meeting(x, y+96, collision_objs)){
 			double_jump = true;
 		}
@@ -112,6 +115,36 @@ get_controls();
 		}
 		else if(place_meeting(x, y+10, collision_objs)){
 			yspd = -1;
+		}
+	}
+
+//Enemy/Hostile environment collision
+	if(place_meeting(x, y, hostile_obj) && !invincible) {
+		player_health -= 1;
+		
+		if(player_health <= 0) {
+			game_restart();
+		}
+		else {
+			var _obj_other = instance_place(x, y, hostile_obj);
+			if(x < _obj_other.x) {
+				xspd = -5;
+			}
+			else {
+				xspd = 5;
+			}
+		
+			if(y < _obj_other.y) {
+				yspd = -5;
+			}
+			else {
+				yspd = 5;	
+			}
+		
+			alarm_set(5, 10);
+			alarm_set(6, 40);
+			stunned = true;
+			invincible = true;
 		}
 	}
 

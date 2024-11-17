@@ -8,3 +8,5 @@ else {
 xspd = move_dir * 10;
 
 alarm_set(0, 500);
+
+collision_objs = [obj_wall, obj_wall_break];

@@ -23,3 +23,11 @@ almond_cd = false;
 //Chestnut
 dashing = false;
 chestnut_id = 0;
+
+//Player health
+player_health = 3
+
+invincible = false;
+
+hostile_obj = [obj_spike, obj_enemy_bee, obj_enemy_lildude]
+stunned = false;
