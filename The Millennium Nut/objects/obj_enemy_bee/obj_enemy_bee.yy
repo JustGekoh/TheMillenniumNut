@@ -43,7 +43,7 @@
     {"$GMObjectProperty":"v1","%Name":"absolute_path","filters":[],"listItems":[],"multiselect":false,"name":"absolute_path","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"aggro_range","filters":[],"listItems":[],"multiselect":false,"name":"aggro_range","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"200","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"attack_cd","filters":[],"listItems":[],"multiselect":false,"name":"attack_cd","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"40","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"bee_health","filters":[],"listItems":[],"multiselect":false,"name":"bee_health","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"bee_health","filters":[],"listItems":[],"multiselect":false,"name":"bee_health","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

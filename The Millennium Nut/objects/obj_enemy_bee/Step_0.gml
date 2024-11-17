@@ -75,6 +75,10 @@
 	
 	if(place_meeting(x, y, obj_almond_proj)) {
 		bee_health -= 1;
+		if(bee_health >= 1){
+			alarm_set(0, attack_cd);
+			stunned = true;
+		}
 		with(instance_place(x, y, obj_almond_proj)) {
 			instance_destroy();
 		}
