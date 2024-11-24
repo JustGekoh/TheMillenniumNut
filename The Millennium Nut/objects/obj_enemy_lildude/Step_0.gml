@@ -42,7 +42,7 @@ switch(state) {
 	y += yspd;
 	break;
 	
-	case STUNNED:
+	case STUNNED_LILDUDE:
 	speed = 0;
 	break;
 }
