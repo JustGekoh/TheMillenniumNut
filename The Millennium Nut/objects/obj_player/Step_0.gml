@@ -5,7 +5,7 @@ get_controls();
 	//Direction and X speed
 	if(!stunned && !dashing){
 		move_dir = right_key - left_key;
-		move_spd = 5;
+		move_spd = move_spd_default;
 	}
 	else if(!stunned && dashing) {
 		move_dir = right_key - left_key;
@@ -14,7 +14,7 @@ get_controls();
 			move_dir = prev_move_dir;
 		}
 		else {
-			move_spd = 5;
+			move_spd = move_spd_default;
 			dashing = false;
 		}
 	}
@@ -80,7 +80,7 @@ get_controls();
 		jump_buffer = 0;
 		wall_jump_counter--;
 		yspd = jspd;
-		xspd = -(prev_move_dir*20);
+		xspd = -(prev_move_dir*8);
 	}
 	//Double jumping
 	else if(!stunned && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
@@ -133,6 +133,7 @@ get_controls();
 			else {
 				xspd = 5;
 			}
+		
 		
 			if(y < _obj_other.y) {
 				yspd = -5;

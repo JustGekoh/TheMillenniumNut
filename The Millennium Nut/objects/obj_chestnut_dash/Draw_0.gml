@@ -1,5 +1,5 @@
 draw_sprite_ext(
-	spr_chestnut_nut,
+	spr_chestnut1,
 	image_index,
 	x,
 	y,

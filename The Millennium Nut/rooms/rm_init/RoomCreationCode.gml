@@ -1,6 +1,6 @@
 if (!global.save_exists) {
-	obj_player.x = 128;
-	obj_player.y = 640;
+	obj_player.x = 56;
+	obj_player.y = 280;
 }
 else if (global.save_exists) {
 	obj_player.x = global.player_x_save;

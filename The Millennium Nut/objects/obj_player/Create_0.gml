@@ -5,12 +5,13 @@ environment_variables();
 //Moving
 move_dir = 0;
 prev_move_dir = 0
-move_spd = 5;
+move_spd = 0;
+move_spd_default = 3;
 xspd = 0;
 yspd = 0;
 
 //Vertical Movement
-jspd = -7;
+jspd = -5;
 
 double_jump = false;
 if(global.cashew_collected) {

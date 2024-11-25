@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cashew_nut",
-    "path":"sprites/spr_cashew_nut/spr_cashew_nut.yy",
+    "name":"spr_cashew",
+    "path":"sprites/spr_cashew/spr_cashew.yy",
   },
   "spriteMaskId":null,
   "visible":true,

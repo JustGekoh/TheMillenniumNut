@@ -15,4 +15,6 @@ if (place_meeting(x, y, obj_player)) {
 		}
 	}
 	room_goto(rm_next);
+	
+	save_game(room_get_name(rm_next));
 }

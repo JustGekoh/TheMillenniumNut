@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_peanut_nut",
-    "path":"sprites/spr_peanut_nut/spr_peanut_nut.yy",
+    "name":"spr_peanut",
+    "path":"sprites/spr_peanut/spr_peanut.yy",
   },
   "spriteMaskId":null,
   "visible":true,
