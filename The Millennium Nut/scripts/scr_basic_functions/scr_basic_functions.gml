@@ -56,7 +56,7 @@ function get_controls(){
 }
 
 
-function save_game() {
+function save_game(_rm_name) {
 	ini_open(global.save_file);
 
 	ini_write_real("nuts", "cashew", global.cashew_collected);
@@ -70,7 +70,7 @@ function save_game() {
 	
 	global.save_exists = ini_write_real("save", "exists", true);
 
-	ini_write_string("player", "room", room_get_name(room));
+	ini_write_string("player", "room", _rm_name);
 
 	ini_close();
 }

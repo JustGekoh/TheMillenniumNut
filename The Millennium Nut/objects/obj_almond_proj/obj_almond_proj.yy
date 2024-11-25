@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_almond_nut",
-    "path":"sprites/spr_almond_nut/spr_almond_nut.yy",
+    "name":"spr_almond",
+    "path":"sprites/spr_almond/spr_almond.yy",
   },
   "spriteMaskId":null,
   "visible":true,

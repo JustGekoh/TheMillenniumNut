@@ -13,7 +13,7 @@ global.player_y_save = 640;
 	
 global.save_exists = false;
 
-global.rm_saved = "rm_hub";
+global.rm_saved = "rm_start";
 
 //Load game
 function load_game() {
@@ -31,7 +31,7 @@ function load_game() {
 	
 	global.save_exists = ini_read_real("save", "exists", false);
 
-	global.rm_saved = ini_read_string("player", "room", "rm_hub");
+	global.rm_saved = ini_read_string("player", "room", "rm_start");
 
 ini_close();
 

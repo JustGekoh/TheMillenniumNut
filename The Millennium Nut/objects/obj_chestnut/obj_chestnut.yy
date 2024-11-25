@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chestnut_nut",
-    "path":"sprites/spr_chestnut_nut/spr_chestnut_nut.yy",
+    "name":"spr_chestnut1",
+    "path":"sprites/spr_chestnut1/spr_chestnut1.yy",
   },
   "spriteMaskId":null,
   "visible":true,
