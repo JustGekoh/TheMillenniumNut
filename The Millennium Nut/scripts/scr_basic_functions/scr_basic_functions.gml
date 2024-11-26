@@ -11,7 +11,7 @@ function environment_variables(){
 	terminal_velocity = 9;
 	
 	//X Movement
-	dash_spd = 8;
+	dash_spd = 5;
 	
 	//Collision
 	collision_objs = [obj_wall, obj_wall_break, obj_chestnut_dash];
