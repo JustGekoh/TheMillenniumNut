@@ -2,7 +2,7 @@ switch(state) {
 	case IDLE_BEE:
 	if(path_index == -1){
 		//Check if path has been reached and start path on reached path_position
-		if(distance_to_point(path_get_x(path, closest_point), path_get_y(path, closest_point)) < (speed * 2)) {
+		if(distance_to_point(path_get_x(path, closest_point), path_get_y(path, closest_point)) < speed) {
 			path_start(path, custom_path_speed, path_action_restart, true);
 			path_position = closest_point;
 		}
@@ -22,7 +22,7 @@ switch(state) {
 	break;
 	
 	case AGGRO_BEE:
-	direction = point_direction(x, y, obj_player.x, obj_player. y + 32);
+	direction = point_direction(x, y, obj_player.x, obj_player.y);
 	speed = custom_path_speed;
 	//Check if player is in aggro range and change state
 	if(distance_to_object(obj_player) > aggro_range){

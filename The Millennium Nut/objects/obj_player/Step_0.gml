@@ -72,6 +72,9 @@ get_controls();
 			jump_btimer = 0;
 			jump_buffer = 0;
 			yspd = jspd;
+			if(global.cashew_collected){
+				double_jump = true;
+			}
 		}
 	}
 	//Wall Jumping
@@ -84,8 +87,8 @@ get_controls();
 		dashing = false;
 	}
 	//Double jumping
-	else if(!stunned && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
-		if(place_meeting(x, y+16, collision_objs)){
+	else if(!stunned && global.cashew_collected && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
+		if(place_meeting(x, y+20, collision_objs)){
 			double_jump = true;
 		}
 		else {
@@ -118,6 +121,13 @@ get_controls();
 		else if(place_meeting(x, y+5, collision_objs)){
 			yspd = -1;
 		}
+		
+		if(place_meeting(x+5, y, collision_objs)) {
+			xspd = -1;	
+		}
+		else if(place_meeting(x-5, y, collision_objs)) {
+			xspd = 1;	
+		}
 	}
 
 	//Enemy/Hostile environment collision
@@ -129,19 +139,26 @@ get_controls();
 		}
 		else {
 			var _obj_other = instance_place(x, y, hostile_obj);
-			if(x < _obj_other.x) {
-				xspd = -5;
-			}
-			else {
-				xspd = 5;
+			if(_obj_other.object_index != obj_spike) {
+				if(x < _obj_other.x) {
+					xspd = -2;
+				}
+				else {
+					xspd = 2;
+				}
 			}
 		
 		
 			if(y < _obj_other.y) {
-				yspd = -5;
+				if(_obj_other.object_index == obj_spike) {
+					yspd = -5;	
+				}
+				else {
+					yspd = -2;
+				}
 			}
 			else {
-				yspd = 5;	
+				yspd = 2;	
 			}
 		
 			alarm_set(5, 10);

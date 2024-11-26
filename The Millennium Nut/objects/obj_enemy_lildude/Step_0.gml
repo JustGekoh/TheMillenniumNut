@@ -1,8 +1,8 @@
 switch(state) {
 	case IDLE_LILDUDE:
-	speed = 4;
+	speed = 1.5;
 	if(place_meeting(x - speed, y, collision_objs) || place_meeting(x + speed, y, collision_objs) || 
-	   !place_meeting(x + 48, y + 48, collision_objs) || !place_meeting(x - 48, y + 48, collision_objs)){
+	   !place_meeting(x + 16, y + 16, collision_objs) || !place_meeting(x - 16, y + 16, collision_objs)){
 		if(direction == 0){
 			direction = 180;
 			x -= 5;
