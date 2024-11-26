@@ -5,7 +5,16 @@ if(obj_player.prev_move_dir != 0){
 else {
 	move_dir = 1;	
 }
-xspd = move_dir * 10;
+
+if(move_dir < 0) {
+	image_angle = 312;	
+}
+else {
+	image_angle = 135;
+}
+
+
+xspd = move_dir * 7;
 
 alarm_set(0, 500);
 

@@ -22,14 +22,14 @@ get_controls();
 	//Dashing chestnut
 	if(!stunned && chestnut_key && global.chestnut_collected && (move_dir != 0) && !dashing) {
 		//Check if there is enough space to summon chestnut
-		if(dashing || (!dashing && (!place_meeting(x, y-64, collision_objs) || !place_meeting(x, y+64, collision_objs)))){
+		if(dashing || (!dashing && (!place_meeting(x, y-8, collision_objs) || !place_meeting(x, y+8, collision_objs)))){
 			dashing = true;
 			//Starting dash
 			yspd = 0;
-			if(place_meeting(x, y+64, collision_objs)){
-				y -= 64;
+			if(place_meeting(x, y+16, collision_objs)){
+				y -= 16;
 			}
-			chestnut_id = instance_create_layer(x+32, y+64+32, "Instances", obj_chestnut_dash);
+			chestnut_id = instance_create_layer(x, y+16, "Instances", obj_chestnut_dash);
 		}
 	}
 	
@@ -75,16 +75,17 @@ get_controls();
 		}
 	}
 	//Wall Jumping
-	else if(!stunned && jump_buffer && global.peanut_collected && wall_jump_counter > 0 && !place_meeting(x,y+yspd, collision_objs) && (place_meeting(x-5,y,collision_objs) || place_meeting(x+5,y,collision_objs))){
+	else if(!stunned && jump_buffer && global.peanut_collected && wall_jump_counter > 0 && !place_meeting(x,y+yspd, collision_objs) && place_meeting(x+(move_dir*5),y,collision_objs)){
 		jump_btimer = 0;
 		jump_buffer = 0;
 		wall_jump_counter--;
 		yspd = jspd;
 		xspd = -(prev_move_dir*8);
+		dashing = false;
 	}
 	//Double jumping
 	else if(!stunned && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
-		if(place_meeting(x, y+96, collision_objs)){
+		if(place_meeting(x, y+16, collision_objs)){
 			double_jump = true;
 		}
 		else {
@@ -104,21 +105,22 @@ get_controls();
 	
 	//Shooting almond
 	if (almond_key && !almond_cd && global.almond_collected) {
-		instance_create_layer(x+32, y+32, "Instances", obj_almond_proj);
+		instance_create_layer(x, y-1, "Instances", obj_almond_proj);
 		almond_cd = true;
 		alarm_set(0, 60);
 	}
 
+	//Collision general
 	if(place_meeting(x, y, collision_objs)){
-		if(place_meeting(x, y-10, collision_objs)){
+		if(place_meeting(x, y-5, collision_objs)){
 			yspd = 1;
 		}
-		else if(place_meeting(x, y+10, collision_objs)){
+		else if(place_meeting(x, y+5, collision_objs)){
 			yspd = -1;
 		}
 	}
 
-//Enemy/Hostile environment collision
+	//Enemy/Hostile environment collision
 	if(place_meeting(x, y, hostile_obj) && !invincible) {
 		player_health -= 1;
 		

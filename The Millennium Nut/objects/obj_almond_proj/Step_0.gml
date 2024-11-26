@@ -1,10 +1,3 @@
-if(move_dir < 0) {
-	image_angle = 90;	
-}
-else {
-	image_angle = 270;
-}
-
 x += xspd;
 
 if (place_meeting(x, y, collision_objs)) {

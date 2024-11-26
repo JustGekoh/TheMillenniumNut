@@ -12,7 +12,7 @@ if (yspd > terminal_velocity) {
 
 y += yspd;
 
-if(id == obj_player.chestnut_id && ((x > (obj_player.x + 64)) || (x < obj_player.x))){
+if(id == obj_player.chestnut_id && (((x > obj_player.x + 16) || (x < obj_player.x - 16)))){
 	obj_player.dashing = false;
 	persistent = false;
 	alarm_set(0, 500);
