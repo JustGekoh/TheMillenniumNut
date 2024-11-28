@@ -12,6 +12,8 @@ yspd = 0;
 
 //Vertical Movement
 jspd = -5;
+in_air = false;
+in_air_prev = false;
 
 double_jump = false;
 if(global.cashew_collected) {

@@ -19,6 +19,7 @@ if(id == obj_player.chestnut_id && (((x > obj_player.x + 16) || (x < obj_player.
 }
 
 if (place_meeting(x+xspd, y, collision_objs)){
+	audio_play_sound(snd_chestnut_contact, 10, false, .7, 0.1, 1.5);
 	instance_destroy();
 }
 else {
