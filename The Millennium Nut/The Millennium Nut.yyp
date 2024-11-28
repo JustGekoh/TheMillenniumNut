@@ -85,6 +85,7 @@
     {"id":{"name":"rm_true_nut","path":"rooms/rm_true_nut/rm_true_nut.yy",},},
     {"id":{"name":"scr_basic_functions","path":"scripts/scr_basic_functions/scr_basic_functions.yy",},},
     {"id":{"name":"scr_game_setup","path":"scripts/scr_game_setup/scr_game_setup.yy",},},
+    {"id":{"name":"bg_loop_music","path":"sounds/bg_loop_music/bg_loop_music.yy",},},
     {"id":{"name":"snd_almond_hit","path":"sounds/snd_almond_hit/snd_almond_hit.yy",},},
     {"id":{"name":"snd_chestnut_contact","path":"sounds/snd_chestnut_contact/snd_chestnut_contact.yy",},},
     {"id":{"name":"snd_nut_pickup","path":"sounds/snd_nut_pickup/snd_nut_pickup.yy",},},

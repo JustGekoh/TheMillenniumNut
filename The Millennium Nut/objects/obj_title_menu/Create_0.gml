@@ -27,7 +27,31 @@ option[0,3] = "Exit";
 	option[2, 1] = "Windowed";
 	option[2, 2] = "Back";
 	
+	//Audio Settings
+	option[3, 0] = "Volume Up";
+	option[3, 1] = "Volume Down";
+	option[3, 2] = "Tunes no' mo'";
+	option[3, 3] = "Back";
 	
+	//Control Settings
+	option[4, 0] = "Keyboard";
+	option[4, 1] = "Controller";
+	option[4, 2] = "Back";
+	
+	//Keyboard Controls
+	option[5, 0] = "Move with arrow keys";
+	option[5, 1] = "Jump with spacebar";
+	option[5, 2] = "Shoot almond with E";
+	option[5, 3] = "Use chestnut with direction + R";
+	option[5, 4] = "Back";
+	
+	//Keyboard Controls
+	option[6, 0] = "Controls are for Xbox360";
+	option[6, 1] = "Move with dpad";
+	option[6, 2] = "Jump with A";
+	option[6, 3] = "Shoot almond with X";
+	option[6, 4] = "Use chestnut with direction + B";
+	option[6, 5] = "Back";
 
 op_length = 0;
 

@@ -1,3 +1,6 @@
+//audio variable
+global.bg_vol = 0.15;
+
 //savefile
 global.save_file = "save.ini";
 
