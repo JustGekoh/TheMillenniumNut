@@ -190,3 +190,16 @@ in_air_prev = in_air;
 //Move
 x += xspd;
 y += yspd;
+
+//Sprites
+if(move_dir!= 0){
+	image_xscale =  move_dir;
+}
+if(abs(xspd) > 0){
+	sprite_index = spr_player_running;
+	
+}
+if(xspd == 0){
+	sprite_index = spr_player_idle;
+}
+
