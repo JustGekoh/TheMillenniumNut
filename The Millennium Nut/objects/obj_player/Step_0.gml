@@ -92,7 +92,7 @@ in_air_prev = in_air;
 		jump_buffer = 0;
 		wall_jump_counter--;
 		yspd = jspd;
-		xspd = -(prev_move_dir*8);
+		xspd = -(prev_move_dir*14);
 		dashing = false;
 		audio_play_sound(snd_squ_jmp, 10, false, 1, 0.1, 3);
 		keyboard_clear(vk_space);
@@ -167,21 +167,18 @@ in_air_prev = in_air;
 				}
 			}
 		
-		
-			if(y < _obj_other.y) {
-				if(_obj_other.object_index == obj_spike) {
-					yspd = -5;	
-				}
-				else {
-					yspd = -2;
-				}
+			if(_obj_other.object_index == obj_spike) {
+				yspd = -5;	
+			}
+			else if(y < _obj_other.y) {
+				yspd = -2;
 			}
 			else {
 				yspd = 2;	
 			}
 		
 			alarm_set(5, 10);
-			alarm_set(6, 40);
+			alarm_set(6, 120);
 			stunned = true;
 			invincible = true;
 		}

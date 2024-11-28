@@ -17,5 +17,7 @@ if (place_meeting(x, y, obj_player)) {
 	}
 	room_goto(rm_next);
 	
+	obj_camera.snap_to_player = true;
+	
 	save_game(room_get_name(rm_next));
 }

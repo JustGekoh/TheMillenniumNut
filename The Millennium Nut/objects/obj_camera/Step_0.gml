@@ -12,17 +12,23 @@ if(!instance_exists(obj_player)){
 var camera_width = camera_get_view_width(view_camera[0]);
 var camera_height = camera_get_view_height(view_camera[0]);
 
-//Getting camera coordinates
-var camera_x = obj_player.x - camera_width/2;
-var camera_y = obj_player.y - camera_height/2;
+//Get player position, constrained to room margins
+var xCam = clamp(obj_player.x - camera_width / 2, 0, room_width - camera_width);
+var yCam = clamp(obj_player.y - camera_height / 2, 0, room_height - camera_height);
 
-//Constrain camera to room edges
-camera_x = clamp(camera_x, 0, room_width - camera_width);
-camera_y = clamp(camera_y, 0, room_height - camera_height);
+//Get the current position of the game camera
+var curX = camera_get_view_x(view_camera[0]);
+var curY = camera_get_view_y(view_camera[0]);
 
-//True cam
-true_cam_x += (camera_x - true_cam_x) * trail_spd;
-true_cam_y += (camera_y - true_cam_y) * trail_spd;
+//Slowly interpolate towards current player position
+var newX = lerp(curX, xCam, 0.5);
+var newY = lerp(curY, yCam, 0.5);
 
 //Setting the cameras coordinates
-camera_set_view_pos(view_camera[0], true_cam_x, true_cam_y);
+if(snap_to_player) {
+	camera_set_view_pos(view_camera[0], xCam, yCam);
+	snap_to_player = false;
+}
+else {
+	camera_set_view_pos(view_camera[0], newX, newY);
+}
