@@ -151,7 +151,12 @@ in_air_prev = in_air;
 
 	//Enemy/Hostile environment collision
 	if(place_meeting(x, y, hostile_obj) && !invincible) {
-		player_health -= 1;
+		if(obj_enemy_bigdude == instance_place(x, y, hostile_obj).object_index) {
+			player_health = 0;
+		}
+		else {
+			player_health -= 1;
+		}
 		
 		if(player_health <= 0) {
 			game_restart();
@@ -199,4 +204,3 @@ if(abs(xspd) > 0){
 if(xspd == 0){
 	sprite_index = spr_player_idle;
 }
-

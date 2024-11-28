@@ -64,6 +64,7 @@ function save_game(_rm_name) {
 	ini_write_real("nuts", "chestnut", global.chestnut_collected);
 	ini_write_real("nuts", "peanut", global.peanut_collected);
 	ini_write_real("nuts", "millenniumnut", global.millennium_nut_collected);
+	ini_write_real("nuts", "truenut", global.true_nut_collected);
 	
 	global.player_x_save = ini_write_real("player", "player_x", obj_player.x);
 	global.player_y_save = ini_write_real("player", "player_y", obj_player.y);

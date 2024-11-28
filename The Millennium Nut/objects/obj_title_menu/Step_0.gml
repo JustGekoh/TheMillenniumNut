@@ -46,8 +46,10 @@ if(accept_key){
 					menu_level = 2;
 					break;
 				case 1: //Audio
+					menu_level = 3;
 					break;
 				case 2: //Controls
+					menu_level = 4;
 					break;
 				case 3: //Back
 					menu_level = 0;
@@ -68,7 +70,64 @@ if(accept_key){
 					break;
 			}
 			break;
-			
+		//Audio Settings
+		case 3:
+			switch(menu_pos){
+				case 0: //Audio Up
+					global.bg_vol += 0.05;
+					global.bg_vol = clamp(global.bg_vol, 0, 1);
+					audio_sound_gain(bg_loop_music, global.bg_vol, 0);
+					break;
+				case 1: // Audio Down
+					global.bg_vol -= 0.05;
+					global.bg_vol = clamp(global.bg_vol, 0, 1);
+					audio_sound_gain(bg_loop_music, global.bg_vol, 0);
+					break;
+				case 2:
+					if(!audio_is_paused(bg_loop_music)) {
+						audio_pause_sound(bg_loop_music);
+						option[3, 2] = "Start da tunes";
+					}
+					else {
+						audio_resume_sound(bg_loop_music);	
+						option[3, 2] = "Tunes no' mo'";
+					}
+					break;
+				case 3:
+					menu_level = 1;
+					break;
+			}
+			break;
+		//Control Settings
+		case 4: 
+			switch(menu_pos){
+				case 0: //Keyboard
+					menu_level = 5;
+					break;
+				case 1: // Controller
+					menu_level = 6;
+					break;
+				case 2:
+					menu_level = 1;
+					break;
+			}
+			break;
+		//Keyboard Controls
+		case 5:
+			switch(menu_pos){
+				case 4:
+					menu_level = 4;
+					break;
+			}
+			break;
+		//Controller Settings
+		case 6:
+			switch(menu_pos){
+				case 5:
+					menu_level = 4;
+					break;
+				}
+			break;
 			
 	}
 		
