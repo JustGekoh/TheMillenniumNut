@@ -32,5 +32,5 @@ player_health = 3
 
 invincible = false;
 
-hostile_obj = [obj_spike, obj_enemy_bee, obj_enemy_lildude]
+hostile_obj = [obj_spike, obj_enemy_bee, obj_enemy_lildude, obj_enemy_bigdude]
 stunned = false;

@@ -7,6 +7,7 @@ global.almond_collected = false;
 global.chestnut_collected = false;
 global.peanut_collected = false;
 global.millennium_nut_collected = false;
+global.true_nut_collected = false;
 	
 global.player_x_save = 128;
 global.player_y_save = 640;
@@ -25,6 +26,7 @@ function load_game() {
 	global.chestnut_collected = ini_read_real("nuts", "chestnut", false);
 	global.peanut_collected = ini_read_real("nuts", "peanut", false);
 	global.millennium_nut_collected = ini_read_real("nuts", "millenniumnut", false);
+	global.true_nut_collected = ini_read_real("nuts", "truenut", false);
 	
 	global.player_x_save = ini_read_real("player", "player_x", 128);
 	global.player_y_save = ini_read_real("player", "player_y", 640);
