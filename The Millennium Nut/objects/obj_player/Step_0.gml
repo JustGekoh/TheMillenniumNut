@@ -1,6 +1,8 @@
 //Key Input
 get_controls();
 
+in_air_prev = in_air;
+
 //X Movement
 	//Direction and X speed
 	if(!stunned && !dashing){
@@ -59,6 +61,10 @@ get_controls();
 		
 		//Reset jumps if going down
 		if(yspd >= 0) {
+			in_air = false;
+			if(in_air != in_air_prev){
+				audio_play_sound(snd_squ_land, 10, false, 1, 0.3, 4);
+			}
 			wall_jump_counter = 3;
 			if(global.cashew_collected) {
 				double_jump = true;	
@@ -72,6 +78,12 @@ get_controls();
 			jump_btimer = 0;
 			jump_buffer = 0;
 			yspd = jspd;
+			if(global.cashew_collected){
+				double_jump = true;
+			}
+			audio_play_sound(snd_squ_jmp, 10, false, 1, 0.1, 3);
+			keyboard_clear(vk_space);
+			in_air = true;
 		}
 	}
 	//Wall Jumping
@@ -82,16 +94,22 @@ get_controls();
 		yspd = jspd;
 		xspd = -(prev_move_dir*8);
 		dashing = false;
+		audio_play_sound(snd_squ_jmp, 10, false, 1, 0.1, 3);
+		keyboard_clear(vk_space);
 	}
 	//Double jumping
-	else if(!stunned && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
-		if(place_meeting(x, y+16, collision_objs)){
+	else if(!stunned && global.cashew_collected && jump_buffer && double_jump && !place_meeting(x, y+yspd, collision_objs) && (!place_meeting(x+(move_dir*move_spd),y,collision_objs) || wall_jump_counter <= 0)) {
+		if(place_meeting(x, y+12, collision_objs)){
 			double_jump = true;
 		}
 		else {
 			double_jump = false;	
 		}
+		jump_btimer = 0;
+		jump_buffer = 0;
 		yspd = jspd;
+		audio_play_sound(snd_squ_jmp, 10, false, 1, 0.1, 3);
+		keyboard_clear(vk_space);
 	}
 	
 	//Terminal Velocity
@@ -118,6 +136,17 @@ get_controls();
 		else if(place_meeting(x, y+5, collision_objs)){
 			yspd = -1;
 		}
+		
+		if(place_meeting(x+5, y, collision_objs)) {
+			xspd = -1;	
+		}
+		else if(place_meeting(x-5, y, collision_objs)) {
+			xspd = 1;	
+		}
+	}
+	
+	if(!place_meeting(x, y+8, collision_objs)) {
+		in_air = true;	
 	}
 
 	//Enemy/Hostile environment collision
@@ -129,19 +158,26 @@ get_controls();
 		}
 		else {
 			var _obj_other = instance_place(x, y, hostile_obj);
-			if(x < _obj_other.x) {
-				xspd = -5;
-			}
-			else {
-				xspd = 5;
+			if(_obj_other.object_index != obj_spike) {
+				if(x < _obj_other.x) {
+					xspd = -2;
+				}
+				else {
+					xspd = 2;
+				}
 			}
 		
 		
 			if(y < _obj_other.y) {
-				yspd = -5;
+				if(_obj_other.object_index == obj_spike) {
+					yspd = -5;	
+				}
+				else {
+					yspd = -2;
+				}
 			}
 			else {
-				yspd = 5;	
+				yspd = 2;	
 			}
 		
 			alarm_set(5, 10);

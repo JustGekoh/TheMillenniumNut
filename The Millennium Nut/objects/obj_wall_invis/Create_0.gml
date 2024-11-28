@@ -1,0 +1,1 @@
+hide_layer = layer_get_id(tile_layer);
