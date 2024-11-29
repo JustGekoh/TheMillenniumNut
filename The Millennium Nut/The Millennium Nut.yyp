@@ -117,6 +117,8 @@
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
     {"id":{"name":"spr_tree_hub_bg","path":"sprites/spr_tree_hub_bg/spr_tree_hub_bg.yy",},},
     {"id":{"name":"spr_true_nut","path":"sprites/spr_true_nut/spr_true_nut.yy",},},
+    {"id":{"name":"spr_true_player_idle","path":"sprites/spr_true_player_idle/spr_true_player_idle.yy",},},
+    {"id":{"name":"spr_true_player_running","path":"sprites/spr_true_player_running/spr_true_player_running.yy",},},
     {"id":{"name":"spr_wall_break","path":"sprites/spr_wall_break/spr_wall_break.yy",},},
     {"id":{"name":"spr_wall_invis","path":"sprites/spr_wall_invis/spr_wall_invis.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
