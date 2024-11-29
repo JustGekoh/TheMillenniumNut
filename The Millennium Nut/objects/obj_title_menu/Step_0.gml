@@ -35,10 +35,7 @@ if(accept_key){
 					room_goto(rm_init); 
 					break;
 				case 1: //Continue
-					if(global.save_exists) {
-						load_game(); room_goto(rm_init);
-					}
-					break;
+					load_game(); room_goto(rm_init); break;
 				case 2: //Settings
 					menu_level = 1; break;
 				case 3: //Quit Game
