@@ -6,7 +6,7 @@ showing_dialogue = false;
 
 curr_dialogue = "";
 
-alpha = 0;
+draw_set_alpha(1);
 
 if(instance_exists(obj_player)) {
 	obj_player.stunned = true;

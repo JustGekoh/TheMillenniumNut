@@ -11,5 +11,9 @@ if(place_meeting(x, y, obj_player)) {
 			   ]
 	});
 	
+	with(instance_nearest(x, y, obj_warp)) {
+		rm_next = rm_credits;
+	}
+	
 	instance_destroy();
 }
