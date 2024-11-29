@@ -1,6 +1,9 @@
 //audio variable
 global.bg_vol = 0.15;
 
+//intro dialogue variable
+global.show_intro_dialogue = false;
+
 //savefile
 global.save_file = "save.ini";
 

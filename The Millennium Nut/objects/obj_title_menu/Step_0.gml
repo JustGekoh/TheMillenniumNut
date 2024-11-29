@@ -30,9 +30,15 @@ if(accept_key){
 		case 0:
 			switch(menu_pos){
 				case 0: //New Game
-					delete_save(); load_game(); room_goto(rm_init); break;
+					delete_save(); load_game();
+					global.show_intro_dialogue = true;
+					room_goto(rm_init); 
+					break;
 				case 1: //Continue
-					load_game(); room_goto(rm_init); break;
+					if(global.save_exists) {
+						load_game(); room_goto(rm_init);
+					}
+					break;
 				case 2: //Settings
 					menu_level = 1; break;
 				case 3: //Quit Game
