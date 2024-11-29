@@ -1,2 +1,4 @@
 /// @description Invincibility frames end
-invincible = false;
+if(!global.true_nut_collected){	
+	invincible = false;
+}

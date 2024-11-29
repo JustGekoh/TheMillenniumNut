@@ -18,7 +18,7 @@ option[0,3] = "Exit";
 
 	//Settings
 	option[1, 0] = "Window Settings";
-	option[1, 1] = "Audio";
+	option[1, 1] = "Music";
 	option[1, 2] = "Controls";
 	option[1, 3] = "Back";
 	
@@ -27,7 +27,7 @@ option[0,3] = "Exit";
 	option[2, 1] = "Windowed";
 	option[2, 2] = "Back";
 	
-	//Audio Settings
+	//Music Settings
 	option[3, 0] = "Volume Up";
 	option[3, 1] = "Volume Down";
 	option[3, 2] = "Tunes no' mo'";

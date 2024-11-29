@@ -73,15 +73,15 @@ if(accept_key){
 					break;
 			}
 			break;
-		//Audio Settings
+		//Music Settings
 		case 3:
 			switch(menu_pos){
-				case 0: //Audio Up
+				case 0: //Volume Up
 					global.bg_vol += 0.05;
 					global.bg_vol = clamp(global.bg_vol, 0, 1);
 					audio_sound_gain(bg_loop_music, global.bg_vol, 0);
 					break;
-				case 1: // Audio Down
+				case 1: //Volume Down
 					global.bg_vol -= 0.05;
 					global.bg_vol = clamp(global.bg_vol, 0, 1);
 					audio_sound_gain(bg_loop_music, global.bg_vol, 0);

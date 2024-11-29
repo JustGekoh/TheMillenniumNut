@@ -28,7 +28,17 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"has_border","filters":[],"listItems":[],"multiselect":false,"name":"has_border","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"size","filters":[],"listItems":[
+        "\"wrap_text\"",
+        "\"match_parent\"",
+      ],"multiselect":false,"name":"size","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"wrap_text\"","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"text_align","filters":[],"listItems":[
+        "\"left\"",
+        "\"center\"",
+      ],"multiselect":false,"name":"text_align","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"left\"","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
