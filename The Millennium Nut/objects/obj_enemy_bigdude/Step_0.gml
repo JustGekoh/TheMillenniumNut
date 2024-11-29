@@ -45,3 +45,9 @@ switch(state) {
 	speed = 0;
 	break;
 }
+
+//Pause if dialogue is on screen
+if(instance_exists(obj_dialogue_child)) {
+	speed = 0;
+	path_speed = 0;
+}

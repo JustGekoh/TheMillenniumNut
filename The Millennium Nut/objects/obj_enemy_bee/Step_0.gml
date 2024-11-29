@@ -1,5 +1,6 @@
 switch(state) {
 	case IDLE_BEE:
+	path_speed = custom_path_speed;
 	if(path_index == -1){
 		//Check if path has been reached and start path on reached path_position
 		if(distance_to_point(path_get_x(path, closest_point), path_get_y(path, closest_point)) < speed) {
@@ -78,3 +79,9 @@ switch(state) {
 			instance_destroy();
 		}
 	}
+
+//Pause if dialogue is on screen
+if(instance_exists(obj_dialogue_child)) {
+	speed = 0;
+	path_speed = 0;
+}

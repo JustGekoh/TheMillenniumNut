@@ -23,6 +23,7 @@ if(showing_dialogue == true) {
 	draw_rectangle((border * 2)  + padding, offset_y + (border * 2), display_get_gui_width() - (border * 2) - padding, offset_y + height - (border * 2), false);
 	
 	draw_set_color(c_white);
+	draw_set_font(global.font_main);
     draw_text_ext_transformed(text_x  + padding, offset_y + text_y, curr_dialogue, 16, (display_get_gui_width() - 100) / 5, scale, scale, 0);
 	
 	alpha = lerp(alpha, 1, 0.06);
