@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sn_true_nut_2.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.6,
 }
