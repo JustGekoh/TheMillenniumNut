@@ -201,9 +201,18 @@ if(move_dir!= 0){
 	image_xscale =  move_dir;
 }
 if(abs(xspd) > 0){
-	sprite_index = spr_player_running;
-	
+	if(global.true_nut_collected) {
+		sprite_index = spr_true_player_running;
+	}
+	else {
+		sprite_index = spr_player_running;
+	}
 }
 if(xspd == 0){
-	sprite_index = spr_player_idle;
+	if(global.true_nut_collected) {
+		sprite_index = spr_true_player_idle;
+	}
+	else {
+		sprite_index = spr_player_idle;
+	}
 }

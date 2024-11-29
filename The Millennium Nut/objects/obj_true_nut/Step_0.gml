@@ -12,5 +12,15 @@ if(place_meeting(x, y, obj_player)) {
 			   ]
 	});
 	
+	with(instance_nearest(x, y, obj_warp)) {
+		rm_next = rm_cutscene;
+	}
+	
+	obj_player.invincible = true;
+	obj_player.player_health = 3;
+	if(instance_exists(obj_healthbar)){
+		instance_destroy(obj_healthbar);	
+	}
+	
 	instance_destroy();
 }

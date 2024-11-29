@@ -54,6 +54,7 @@
     {"id":{"name":"obj_cashew","path":"objects/obj_cashew/obj_cashew.yy",},},
     {"id":{"name":"obj_chestnut_dash","path":"objects/obj_chestnut_dash/obj_chestnut_dash.yy",},},
     {"id":{"name":"obj_chestnut","path":"objects/obj_chestnut/obj_chestnut.yy",},},
+    {"id":{"name":"obj_cutscene_end","path":"objects/obj_cutscene_end/obj_cutscene_end.yy",},},
     {"id":{"name":"obj_dialogue_child","path":"objects/obj_dialogue_child/obj_dialogue_child.yy",},},
     {"id":{"name":"obj_dialogue_parent","path":"objects/obj_dialogue_parent/obj_dialogue_parent.yy",},},
     {"id":{"name":"obj_enemy_bee","path":"objects/obj_enemy_bee/obj_enemy_bee.yy",},},
